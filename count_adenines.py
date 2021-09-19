@@ -1,11 +1,21 @@
 import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument("path", help = 'path to the file')
-args = parser.parse_args()
-genome_file = args.path
-with open(genome_file) as file:
-    A_count=0
-    for i in file:
-        if '>' not in i:
-            A_count += i.count('A')
-print(A_count)
+
+def main(input_file):
+    with open(input_file) as file:
+        A_count=0
+        for i in file:
+            if '>' not in i:
+                A_count += i.upper().count('A')
+    print(A_count)
+
+
+if __name__ == '__main__':
+    
+    parser = argparse.ArgumentParser(description='Counting A in the file')
+    parser.add_argument('-i','--input', help='Input file', required=True)
+    args = parser.parse_args()
+    
+    input_file = args.input
+
+    main(input_file)
+
