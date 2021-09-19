@@ -1,3 +1,9 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
+#@created: 19 Sept 2021
+#@author: Marina Popova
+
 import argparse
 
 def main(input_file):
